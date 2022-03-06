@@ -1,0 +1,19 @@
+<ProjectInfo Version="1">
+  <Signature>4570C4162A3E2465109CD0A85B11ECADA277574EF0ADC98ADBD113388C3E4B90</Signature>
+  <Content>
+    <Project Guid="3d57a8a9-7a64-4e0f-9c43-04c1d5f4f8ce">
+      <DisplayName Value="Tombstone Card Game Graybox"/>
+      <DetailName Value=""/>
+      <MainProjectGuid Value="bc7522f6-31ac-4fb7-bb70-ec3b33deff7a"/>
+      <IconType Value="0"/>
+      <IdProjectIcon Value="00000000-0000-0000-0000-000000000000"/>
+      <ScmProviderGuid Value="0745c2ee-abe3-451b-934e-7f597f56c0d7"/>
+      <ScmConfiguration Value=""/>
+      <CreationTimeStamp Value="637810668447177977"/>
+      <PartitionHash Value="E2B51CDF053CA18D2680637DBE21DEAE1C3352217FB8B323B6539A4E53E6AF10"/>
+      <SaveFileVersion Value="55"/>
+      <ProjectType Value="0"/>
+      <IsOnlineProject Value="False"/>
+    </Project>
+  </Content>
+</ProjectInfo>

@@ -1,0 +1,34 @@
+<ExportPresets LastType="XmlContentExport">
+  <Preset DisplayName="" Type="Unity3DExport">
+    <ExportSettings Type="Unity3DExport">
+      <Filename>D:\Game Projects\Unity\Tombstone Card Gameplay Test ARTICY Version\Assets\Articy Exports\Tombstone Card Game Graybox 2.22.2022.articyu3d</Filename>
+      <CustomSettings>
+        <Option Name="set_Localization" Value="False"/>
+        <Option Name="set_TextFormatter" Value="Unity"/>
+        <Option Name="set_IncludedNodes" Value="Settings, Project, GlobalVariables, ObjectDefinitions, Packages, ScriptMethods, Hierarchy, Assets"/>
+      </CustomSettings>
+      <PackageStates/>
+      <SelectedRuleSet>72057594037928191</SelectedRuleSet>
+    </ExportSettings>
+  </Preset>
+  <Preset DisplayName="" Type="XlsxForReimport">
+    <ExportSettings Type="XlsxForReimport">
+      <Filename>C:\Users\nicol\Downloads\Tombstone Card Game Graybox excel for reimport test.xlsx</Filename>
+      <SortObjectsBy>DisplayName</SortObjectsBy>
+      <SelectedProperties/>
+      <AutoOpenFile>1</AutoOpenFile>
+      <ExportQueries>1</ExportQueries>
+      <MarkupTextFormat>Plain</MarkupTextFormat>
+    </ExportSettings>
+  </Preset>
+  <Preset DisplayName="" Type="XmlContentExport">
+    <ExportSettings Type="XmlContentExport">
+      <Filename>D:\Game Projects\Unity\Tombstone Card Gameplay Test 1\Assets\Exports from Articy\Tombstone Card Game Graybox v8 - data cleanup - 3.2.2022.xml</Filename>
+      <ExportMarkup>1</ExportMarkup>
+      <ExportQueries>1</ExportQueries>
+      <ApplyTransformations>0</ApplyTransformations>
+      <WriteNamespace>1</WriteNamespace>
+      <WriteAllVariables>1</WriteAllVariables>
+    </ExportSettings>
+  </Preset>
+</ExportPresets>
