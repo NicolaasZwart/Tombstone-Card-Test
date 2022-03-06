@@ -1,0 +1,3427 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
+  m_Name: Tombstone Card Game Graybox
+  m_EditorClassIdentifier: 
+  version: 3/2/2022 5:45:43 PM
+  author: articy:draft 3.1.33
+  description: 
+  globalUserScript: 
+  emphasisSettings:
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    bold: 0
+    italic: 0
+    underline: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    bold: 0
+    italic: 0
+    underline: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    bold: 0
+    italic: 0
+    underline: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    bold: 0
+    italic: 0
+    underline: 0
+  baseID: 1
+  actors:
+  - id: 1
+    fields:
+    - title: Name
+      value: Ovidio Cabeaga
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[file:///D:/Game Projects/Articy/Tombstone Card Game Graybox/Assets/Character
+        Portraits/Ovidio5Cups.jpg]'
+      type: 0
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000005CD
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_6D688787
+      type: 0
+      typeString: 
+    - title: Motivation
+      value: 
+      type: 0
+      typeString: 
+    - title: InnerConflict
+      value: 
+      type: 0
+      typeString: 
+    - title: Skills
+      value: 
+      type: 0
+      typeString: 
+    - title: Fears
+      value: 
+      type: 0
+      typeString: 
+    - title: Habits
+      value: 
+      type: 0
+      typeString: 
+    - title: FurtherDetails
+      value: 
+      type: 0
+      typeString: 
+    - title: Age
+      value: 
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Species
+      value: 
+      type: 0
+      typeString: 
+    - title: BornIn
+      value: 
+      type: 0
+      typeString: 
+    - title: Sex
+      value: Male
+      type: 0
+      typeString: 
+    - title: Occupation
+      value: 
+      type: 0
+      typeString: 
+    - title: Accent
+      value: 
+      type: 0
+      typeString: 
+    - title: Personality
+      value: 
+      type: 0
+      typeString: 
+    - title: Appearance
+      value: 
+      type: 0
+      typeString: 
+    - title: IsNPC
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 2800000, guid: cd8e7d175b3467c4d87980b2d96d2df8, type: 3}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  - id: 2
+    fields:
+    - title: Name
+      value: Bellboy
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[file:///D:/Game Projects/Articy/Tombstone Card Game Graybox/Assets/Character
+        Portraits/Bellboy.jpg]'
+      type: 0
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000005D6
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_133DE147
+      type: 0
+      typeString: 
+    - title: Age
+      value: 
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Species
+      value: 
+      type: 0
+      typeString: 
+    - title: BornIn
+      value: 
+      type: 0
+      typeString: 
+    - title: Sex
+      value: Male
+      type: 0
+      typeString: 
+    - title: Occupation
+      value: 
+      type: 0
+      typeString: 
+    - title: Accent
+      value: 
+      type: 0
+      typeString: 
+    - title: Personality
+      value: 
+      type: 0
+      typeString: 
+    - title: Appearance
+      value: 
+      type: 0
+      typeString: 
+    - title: IsNPC
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 2800000, guid: e69331b7dc3903549890d83e52bd81b9, type: 3}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
+  items:
+  - id: 1
+    fields:
+    - title: Name
+      value: The Smiler
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000394
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_88985F85
+      type: 0
+      typeString: 
+    - title: cardName
+      value: The Smiler
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeClass
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 2
+    fields:
+    - title: Name
+      value: The Sneakthief
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000003E9
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_D898A894
+      type: 0
+      typeString: 
+    - title: cardName
+      value: The Sneakthief
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeClass
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 3
+    fields:
+    - title: Name
+      value: The Gunslinger
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000003EE
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_04BAAE23
+      type: 0
+      typeString: 
+    - title: cardName
+      value: The Gunslinger
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeClass
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 4
+    fields:
+    - title: Name
+      value: Stevedore
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000003F3
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_89F246A1
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Stevedore
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 5
+    fields:
+    - title: Name
+      value: Widower
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000003F8
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_1192FA3D
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Stevedore
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 6
+    fields:
+    - title: Name
+      value: Blush of Youth
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x010000000000045A
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_EA1176DD
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Blush of Youth
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 7
+    fields:
+    - title: Name
+      value: Troubled Family
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x010000000000045F
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_1DCCC9FB
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Troubled Family
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 8
+    fields:
+    - title: Name
+      value: Raised in the Middle Class
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000464
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_DF068F16
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Raised in the Middle Class
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 9
+    fields:
+    - title: Name
+      value: An Ordinary Person
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000469
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_A1B71FA0
+      type: 0
+      typeString: 
+    - title: cardName
+      value: An Ordinary Person
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 10
+    fields:
+    - title: Name
+      value: Urchin
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004D4
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_2EF42F96
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Urchin
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 11
+    fields:
+    - title: Name
+      value: Politician
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004D9
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_50EAECEA
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Politician
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -2
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 12
+    fields:
+    - title: Name
+      value: Person with a Secret
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004DE
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_EA4C27C6
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Person with a Secret
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeBackground
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 13
+    fields:
+    - title: Name
+      value: Lonely Boy
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004E3
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_3E3EF7EE
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Lonely Boy
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 14
+    fields:
+    - title: Name
+      value: Helpful One
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004E8
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_1B4273AE
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Helpful One
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 15
+    fields:
+    - title: Name
+      value: Rocks in the Desert with Eyes
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004ED
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_BBB15B49
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Rocks in the Desert with Eyes
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: -3
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 2
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 16
+    fields:
+    - title: Name
+      value: If You're Going to New Francisco
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004F2
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_46C0DDE0
+      type: 0
+      typeString: 
+    - title: cardName
+      value: If You're Going to New Francisco
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 17
+    fields:
+    - title: Name
+      value: The Embrace of the Long Lost
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004F7
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_F5A793CE
+      type: 0
+      typeString: 
+    - title: cardName
+      value: The Embrace of the Long Lost
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 18
+    fields:
+    - title: Name
+      value: A Meeting of the Lines
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x01000000000004FC
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_64EDD5BE
+      type: 0
+      typeString: 
+    - title: cardName
+      value: A Meeting of the Lines
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 19
+    fields:
+    - title: Name
+      value: Last Stand in Tombstone
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000501
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_E6668326
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Last Stand in Tombstone
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: -1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypeQuest
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 1
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 20
+    fields:
+    - title: Name
+      value: Exponential Brownian Heat
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000506
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_2E98434D
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Exponential Brownian Heat
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypePsionic
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 21
+    fields:
+    - title: Name
+      value: Levitation
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x010000000000050B
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_475962F7
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Levitation
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypePsionic
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 22
+    fields:
+    - title: Name
+      value: Blindness
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000510
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_935B75BE
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Blindness
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypePsionic
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 23
+    fields:
+    - title: Name
+      value: Memories of Anguish
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x0100000000000515
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_CA64C7DA
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Memories of Anguish
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypePsionic
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  - id: 24
+    fields:
+    - title: Name
+      value: Clear Mind in the Face of Danger
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Is Item
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Articy Id
+      value: 0x010000000000051A
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Ntt_0736C730
+      type: 0
+      typeString: 
+    - title: cardName
+      value: Clear Mind in the Face of Danger
+      type: 0
+      typeString: 
+    - title: agilityBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: charismaBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: cardType
+      value: cardTypePsionic
+      type: 0
+      typeString: 
+    - title: IsItem
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: isCard
+      value: True
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: enduranceBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: mindBonus
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+  locations:
+  - id: 1
+    fields:
+    - title: Name
+      value: Fourth Floor of the Palace Hotel
+      type: 0
+      typeString: 
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+    - title: Articy Id
+      value: 0x01000000000008B2
+      type: 0
+      typeString: 
+    - title: Technical Name
+      value: Loc_EE3C00F0
+      type: 0
+      typeString: 
+  variables:
+  - id: 1
+    fields:
+    - title: Name
+      value: TombstoneCardGameGraybox.convincedBellboy
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  conversations:
+  - id: 1
+    fields:
+    - title: Title
+      value: Test Conversation
+      type: 0
+      typeString: 
+    - title: Description
+      value: This is a test conversation created in order to facilitate importing
+        Ability Card data into Unity via Dialogue System. 2.22.22
+      type: 0
+      typeString: 
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: 2
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Articy Id
+      value: 0x01000000000008B6
+      type: 0
+      typeString: 
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008B6
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 0
+        destinationConversationID: 1
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: input
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008B9
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008B9
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 1
+        destinationConversationID: 1
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 2
+      fields:
+      - title: Title
+        value: output
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008BA
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008BA
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 3
+      fields:
+      - title: Title
+        value: output
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000943
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000943
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 4
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: ""I need a way into this room.""'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"I need a way into this room."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008BF
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008C0
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008C1
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 4
+        destinationConversationID: 1
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: 'Bellboy: "The young man stands just in front..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: The young man stands just in front of the door to room 415, pointlessly
+          brushing a gleaming vase with a frilly feather duster.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008C5
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008C6
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008C7
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 5
+        destinationConversationID: 1
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 6
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: ""You can help me by getting lost.""'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"You can help me by getting lost."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008CB
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008CC
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008CD
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 6
+        destinationConversationID: 1
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 7
+      fields:
+      - title: Title
+        value: 'Bellboy: "He glances at you furtively, but do..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: He glances at you furtively, but doesn't otherwise acknowledge your
+          presence. The feathers in the duster appear to have been plucked from a
+          peacock.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008D1
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008D2
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008D3
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 7
+        destinationConversationID: 1
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 8
+      fields:
+      - title: Title
+        value: 'Bellboy: "He steps out of the way and gesture..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: He steps out of the way and gestures into the open room. "My sincerest
+          apologies. Please let me know if I can be of help."
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008D7
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008D8
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008D9
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 8
+        destinationConversationID: 1
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 8
+        destinationConversationID: 1
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 8
+        destinationConversationID: 1
+        destinationDialogueID: 17
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: 'Bellboy: ""If you don''t leave right now," he..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"If you don''t leave right now," he mutters, "I''ll be forced to
+          ring for the security."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008DD
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008DE
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008DF
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 9
+        destinationConversationID: 1
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 4
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: "Bellboy: \"\u201CSir, I already told you, I can\u2019t l...\""
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u201CSir, I already told you, I can\u2019t let you in here.\u201D"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008E3
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008E4
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008E5
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 10
+        destinationConversationID: 1
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 10
+        destinationConversationID: 1
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: "You push into the room."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: You push into the room.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008E9
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008EA
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008EB
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 11
+        destinationConversationID: 1
+        destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: "Ovidio Cabeaga: \"[Charisma contest.] (Lie) \u201CI just s...\""
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "[Charisma contest.] (Lie) \u201CI just spoke to the concierge: a
+          Mr. Gibson. It\u2019s all taken care of, son. You can let me in.\u201D"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008EF
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008F0
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008F1
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 12
+        destinationConversationID: 1
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 13
+      fields:
+      - title: Title
+        value: 'Bellboy: "The young man narrows his eyes. "I..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: The young man narrows his eyes. "I don't believe that's true." He
+          turns away from you.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008F5
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008F6
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008F7
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 13
+        destinationConversationID: 1
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: ""I''ll come back later, then.""'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"I''ll come back later, then."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x01000000000008FB
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x01000000000008FC
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x01000000000008FD
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 14
+        destinationConversationID: 1
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 'Bellboy: "The Bellboy shuffles off, throwing..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: The Bellboy shuffles off, throwing back hurt glances.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000901
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000902
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000903
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 15
+        destinationConversationID: 1
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 'Flow: Charisma contest with Bellboy'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000907
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000908
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x010000000000090A
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 16
+        destinationConversationID: 1
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 16
+        destinationConversationID: 1
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: OnFlowFragment("Charisma contest with Bellboy"); Variable["TombstoneCardGameGraybox.convincedBellboy"]
+        = true; Variable["TombstoneCardGameGraybox.convincedBellboy"] = false
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: ""No, thank you, you can go.""'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"No, thank you, you can go."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x010000000000090F
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000910
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000911
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 17
+        destinationConversationID: 1
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: TombstoneCardGameGraybox.convincedBellboy == true
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000915
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000916
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 18
+        destinationConversationID: 1
+        destinationDialogueID: 19
+        isConnector: 0
+        priority: 2
+      - originConversationID: 1
+        originDialogueID: 18
+        destinationConversationID: 1
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: TombstoneCardGameGraybox.convincedBellboy == true
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000915
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000917
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 19
+        destinationConversationID: 1
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: Variable["TombstoneCardGameGraybox.convincedBellboy"] ==
+        true
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: '!(TombstoneCardGameGraybox.convincedBellboy == true)'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000915
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000918
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 20
+        destinationConversationID: 1
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: (Variable["TombstoneCardGameGraybox.convincedBellboy"] ==
+        true) == false
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 'Bellboy: "The Bellboy moves off quickly down..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: The Bellboy moves off quickly down the hall without a backward glance.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x010000000000091A
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x010000000000091B
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x010000000000091C
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 21
+        destinationConversationID: 1
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 'Ovidio Cabeaga: ""Yes, please wait here. I''ll just b..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: '"Yes, please wait here. I''ll just be a moment."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000920
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000921
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000922
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 22
+        destinationConversationID: 1
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: 'Bellboy: "The young man nods, spluttering, "O..."'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: The young man nods, spluttering, "Oh, I didn't realize you'd spoken
+          to Mr. Gibson, sir." He fumbles for his keyring and unlocks the door.
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000926
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000927
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000928
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 23
+        destinationConversationID: 1
+        destinationDialogueID: 8
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: 'Jump to: [End of conversation]'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000CD6
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000CD9
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 24
+        destinationConversationID: 1
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: End of conversation
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 2
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Articy Id
+        value: 0x0100000000000CDA
+        type: 0
+        typeString: 
+      - title: InputId
+        value: 0x0100000000000CDC
+        type: 0
+        typeString: 
+      - title: OutputId
+        value: 0x0100000000000CDD
+        type: 0
+        typeString: 
+      conversationID: 1
+      isRoot: 0
+      isGroup: 1
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: 
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 1
+        originDialogueID: 25
+        destinationConversationID: 1
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
+  syncInfo:
+    syncActors: 0
+    syncItems: 0
+    syncLocations: 0
+    syncVariables: 0
+    syncActorsDatabase: {fileID: 0}
+    syncItemsDatabase: {fileID: 0}
+    syncLocationsDatabase: {fileID: 0}
+    syncVariablesDatabase: {fileID: 0}
+  templateJson: '{"treatItemsAsQuests":true,"actorFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"IsPlayer","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"itemFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Is
+    Item","value":"True","type":2,"typeString":"CustomFieldType_Boolean"}],"questFields":[{"title":"Name","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Pictures","value":"[]","type":3,"typeString":"CustomFieldType_Files"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Success
+    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Failure
+    Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"State","value":"unassigned","type":0,"typeString":"CustomFieldType_QuestState"},{"title":"Is
+    Item","value":"False","type":2,"typeString":"CustomFieldType_Boolean"}],"locationFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"variableFields":[{"title":"Name","value":"","type":0,"typeString":""},{"title":"Initial
+    Value","value":"","type":0,"typeString":""},{"title":"Description","value":"","type":0,"typeString":""}],"conversationFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"0","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"0","type":5,"typeString":"CustomFieldType_Actor"}],"dialogueEntryFields":[{"title":"Title","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Description","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Actor","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Conversant","value":"","type":5,"typeString":"CustomFieldType_Actor"},{"title":"Menu
+    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Dialogue
+    Text","value":"","type":0,"typeString":"CustomFieldType_Text"},{"title":"Sequence","value":"","type":0,"typeString":"CustomFieldType_Text"}],"actorPrimaryFieldTitles":[],"itemPrimaryFieldTitles":[],"questPrimaryFieldTitles":[],"locationPrimaryFieldTitles":[],"variablePrimaryFieldTitles":[],"conversationPrimaryFieldTitles":[],"dialogueEntryPrimaryFieldTitles":[],"npcLineColor":{"r":1.0,"g":0.0,"b":0.0,"a":1.0},"pcLineColor":{"r":0.0,"g":0.0,"b":1.0,"a":1.0},"repeatLineColor":{"r":0.5,"g":0.5,"b":0.5,"a":1.0}}'
