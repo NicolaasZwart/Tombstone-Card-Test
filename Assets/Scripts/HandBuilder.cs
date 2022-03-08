@@ -16,6 +16,8 @@ public class HandBuilder : MonoBehaviour
     [SerializeField] TMP_Dropdown numberOfClassCardsDropdown;
     [SerializeField] TMP_Dropdown numberOfBGCardsDropdown;
 
+    [SerializeField] TMP_Text infoText;
+
     // This connects with the CardStats script on each CardGeneric.
     CardStats playerCardStats; 
 
@@ -29,17 +31,7 @@ public class HandBuilder : MonoBehaviour
     int handSize = 5; // Hand size. Modifiable from a dropdown.
     int classCardsDesired = 1; // Number of class cards desired in a hand. Modifiable from a dropdown.
     int backgroundCardsDesired = 2; // Number of background cards desired in a hand. Modifiable from a dropdown.
-
-    // Card count variables
-    int classCardCount = 0;
-    int backgroundCardCount = 0;
-    int questCardCount = 0;
-    int psionicCardCount = 0;
-
-    // Random selection variables
-    int randomClassCardDraw = 0;
-    int randomBackgroundCardDraw = 0;
-    int randomQuestCardDraw = 0;
+    int questCardsDesired = 2;
 
     // Card stat variables
     int agilityBonus = 0;
@@ -49,20 +41,22 @@ public class HandBuilder : MonoBehaviour
     string cardType = "";
     string playerCardName = "";
 
-    private IEnumerable<Item> allCards;
+    private IEnumerable<Item> allCards = Enumerable.Empty<Item>();
 
 
-    void Awake() 
+  /*  void Awake() 
     {
+
         IEnumerable<Item> allCards =
-            from card in DialogueManager.masterDatabase.items
-            where card.FieldExists("isCard") == true
-            select card;
-    }
-    
+                from card in DialogueManager.masterDatabase.items
+                where card.FieldExists("isCard") == true
+                select card;
+    }*/
+
     void Start()
     {
         playerCardStats = cardGeneric.GetComponent<CardStats>();
+        Random.InitState(DateTime.Now.Millisecond);
         //handSizeDropdown = GetComponent<TMP_Dropdown>();
     }
 
@@ -108,99 +102,129 @@ public class HandBuilder : MonoBehaviour
 
     private void BuildARandomHand()
     {
+
+        //int randomNumberTest = Random.Range(0, 100);
+        //Debug.Log(randomNumberTest + ": Random number test!");
+
+        infoText.text = "";
         cardCountSeparator = 0f;
+
+        IEnumerable<Item> allCards =
+            from card in DialogueManager.masterDatabase.items
+            where card.FieldExists("isCard") == true
+            select card;
 
         var sortedCards =
             from card in allCards
             group card by card.LookupValue("cardType");
 
-        // Takes the entries in the serialized dropdown list and converts them to the handSize variable.
+        // This is the list that will comprise the finalized random hand.
+        List<Item> randomHand = new();
+
+        // Takes the entries in the serialized dropdown lists and converts them to variables.
         handSize = Convert.ToInt32((handSizeDropdown.options[handSizeDropdown.value].text));
-        Debug.Log("The current hand size is " + handSize + "!");
+        //Debug.Log("The current hand size is " + handSize + "!");
         classCardsDesired = Convert.ToInt32((numberOfClassCardsDropdown.options[numberOfClassCardsDropdown.value].text));
         backgroundCardsDesired = Convert.ToInt32((numberOfBGCardsDropdown.options[numberOfClassCardsDropdown.value].text));
 
-        List<Item> classCards = new List<Item>();
-        List<Item> backgroundCards = new List<Item>();
-        List<Item> questCards = new List<Item>();
-        List<Item> psionicCards = new List<Item>();
+        if (handSize < classCardsDesired + backgroundCardsDesired - 1)
+        {
+            infoText.text = "Warning: The hand size is too small. Decrease number of Background and/or Class Cards, or increase hand size.";
+        }
+        else
+        {
+            // Sorts all cards from the entire deck into temporary lists and counts how many cards of each type there are.
+            List<Item> classCards = new();
+            List<Item> backgroundCards = new();
+            List<Item> questCards = new();
+            List<Item> psionicCards = new();
 
-        foreach (var cardGroup in sortedCards) // don't nbeed any of this. When doing the drawing, do it from a temporary list of all the class cards, and remove from the list when you draw it.
-        {      
-            switch (cardGroup.Key)
+            classCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypeClass").ToList<Item>();
+            //Debug.Log(classCards.Count() + " Class Cards");
+
+            backgroundCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypeBackground").ToList<Item>();
+            //Debug.Log(backgroundCards.Count() + " Background Cards");
+
+            questCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypeQuest").ToList<Item>();
+            //Debug.Log(questCards.Count() + " Quest Cards");
+
+            psionicCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypePsionic").ToList<Item>();
+            //Debug.Log(psionicCards.Count() + " Psionic Cards");
+
+            //// Class card randomizer.
+            
+            // Generates a list of numbers from 0 to the count of class cards desired for the hand.
+            List<int> randomClassCardPicks = new(); // Declares list
+            for (int n = 0; n < classCards.Count() + 1; n++) // Populates list
             {
-                case "cardTypeClass":
-                    classCardCount = cardGroup.Count();
-                    Debug.Log(classCardCount + " Class Cards");
-                    classCards = cardGroup.ToList<Item>(); // you don't even need to do this, whenever I need to access the list by a random number, just access sortedCards by the key, and pull a random card out of the list returned by that key
-                    Debug.Log(cardGroup.ElementAt(2).Name + " is the third sorted card of the Class-type group!");
-                    break;
-
-                case "cardTypeBackground":
-                    backgroundCardCount = cardGroup.Count();
-                    Debug.Log(backgroundCardCount + " Background Cards");
-                    Debug.Log(cardGroup.ElementAt(2).Name + " is the third sorted card of the Background-type group!");
-                    break;
-
-                case "cardTypeQuest":
-                    questCardCount = cardGroup.Count();
-                    Debug.Log(questCardCount + " Quest Cards");
-                    break;
-
-                case "cardTypePsionic":
-                    psionicCardCount = cardGroup.Count();
-                    Debug.Log(psionicCardCount + " Psionic Cards");
-                    break;
-
-                default:
-                    Debug.Log($"The BuildARandomHand switch statement reached a default.");
-                    break;
+                randomClassCardPicks.Add(n);
             }
-        }
 
-        Debug.Log(sortedCards.FirstOrDefault(x => x.Key == "cardTypeClass").ToList<Item>().ElementAt(1).Name + " is the second sorted card of the Class-type group!");
-        sortedCards.FirstOrDefault(x => x.Key == "cardTypeClass").ToList<Item>().Count(); // this is the same result as the switch.
-        
-        // classCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypeClass").ToList<Item>(); // this is equivalent to an entire case in the above switch.
-        // This would be in a while, or For loop, going for how many cards you need to draw. classCards.Count(); 
-        // then, make a random number between 0 and Count of class cards.
-        // then you draw that card from the class cards list and remove it, and then you repeat the step above until you draw as many cards as you needed.
-         
-
-        /*
-        take the hand size and the number of class cards and do some math 
-        to figure out how many of each other kinds of cards to draw. 
-        Probably should be two background cards.
-        */
-        List<Item> randomHand = new List<Item>();
-/*
-        List<int> randomClassPicks = new List<int>(); // Declare list.
-        for (int n = 0; n < classCardsDesired; n++) // Populate list.
-        {
-            randomClassPicks.Add(n);
-        }
-        for (int n = 0; n < classCardsDesired; n++)
-        {
-            int index = Random.Range(0, randomClassPicks.Count - 1); // Pick random element from the list.
-            int randomClassCardDraw = randomClassPicks[index]; // classCardPick = the number that was randomly picked.
-            randomHand.Add(//CLASS CARD GROUP NAME HERE.ElementAt(randomClassCardDraw)); // .....................TROUBLESHOOT THIS........................................................
-            randomClassPicks.RemoveAt(index); // Remove chosen element.
-        }
-
-*/
-        // add those cards to a new list of cards. (probably of the Dialogue System Item type.)
-
-        /*
-        // Iterate through the list with a foreach, and point that at the CardData method like so:
-        foreach (Item card in TO-BE-DETERMINED LIST)
-        {
-            if (card.FieldExists("isCard"))
+            /*foreach (var x in randomBackgroundCardPicks)
             {
-                cardCountSeparator++;
-                CardData(card, cardCountSeparator);
+                Debug.Log(x.ToString() + " IS THE LIST OF BACKGROUND CARD INT PICKS");
+            }*/
+
+            // Pulls *randomly* from the list of numbers, then finds the class card at that index and adds it to the randomHand list.
+            // Then removes the just-chosen number from the list, and the process repeats a number of times equal to the number of
+            // class cards desired.
+            for (int n = 0; n < classCardsDesired; n++)
+            {
+                int indexClass = Random.Range(0, randomClassCardPicks.Count - 1);
+                Debug.Log(indexClass + " is the randomly chosen index from randomClassCardPicks.");
+                int randomClassCardDraw = randomClassCardPicks[indexClass];
+                randomHand.Add(classCards.ElementAt(randomClassCardDraw));
+                randomClassCardPicks.RemoveAt(indexClass);
             }
+
+            //// Background card randomizer.
+
+            List<int> randomBackgroundCardPicks = new();
+            for (int n = 0; n < backgroundCards.Count() + 1; n++)
+            {
+                randomBackgroundCardPicks.Add(n);
+            }
+
+            for (int n = 0; n < backgroundCardsDesired; n++)
+            {
+                int indexBackground = Random.Range(0, randomBackgroundCardPicks.Count - 1);
+                Debug.Log(indexBackground + " is the randomly chosen index from randomBackgroundCardPicks.");
+                int randomBackgroundCardDraw = randomBackgroundCardPicks[indexBackground];
+                randomHand.Add(backgroundCards.ElementAt(randomBackgroundCardDraw));
+                randomBackgroundCardPicks.RemoveAt(indexBackground);
+            }
+
+            //// Quest card randomizer.
+
+            questCardsDesired = handSize - classCardsDesired - backgroundCardsDesired;
+
+            List<int> randomQuestCardPicks = new();
+            for (int n = 0; n < questCards.Count() + 1; n++)
+            {
+                randomQuestCardPicks.Add(n);
+            }
+
+            //Debug.Log(questCardsDesired + " Quest cards desired."); // this works, but somewhere in the code block immediately below, something does not.
+
+            for (int n = 0; n < questCardsDesired; n++)
+            {
+                int indexQuest = Random.Range(0, randomQuestCardPicks.Count - 1);
+                Debug.Log(indexQuest + " is the randomly chosen index from randomQuestCardPicks.");
+                int randomQuestCardDraw = randomQuestCardPicks[indexQuest];
+                randomHand.Add(questCards.ElementAt(randomQuestCardDraw));
+                randomQuestCardPicks.RemoveAt(indexQuest);
+            }
+
+            //Debug.Log("Fire");
+
+            //// Psionic card randomizer TBD!!!!
+
+            // Final count of cards in randomHand.
+            //Debug.Log(randomHand.Count() + " is the total number of cards currently in randomHand!");
+
         }
-        */
+
+
     }
     
     //////////////////////////////////////////////////////////////////////////
