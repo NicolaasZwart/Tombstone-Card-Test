@@ -45,14 +45,26 @@ public class CardStats : MonoBehaviour
         
         // Gives new game object clone card a name, and puts that name in the title text box.
         cardTitleText.text = playerCardName;
-        
+
+        // Removes any entries in cardStatList with Ability Bonuses equal to zero.
+        //List<CardStatEntry> cardStatListFiltered = cardStatList.AsEnumerable().Where(r => r.AbilityBonus != 0);
+
+        /*for (int n = 0; n < 3; n++)
+        {
+            if (cardStatList.ElementAt(n).AbilityBonus == 0)
+            {
+                cardStatList.RemoveAt(n);
+            }
+        }*/
+
         // Applies bonus values to card.
         IEnumerable<CardStatEntry> cardStatSortedEnumerable = from statEntry in cardStatList
                    orderby statEntry.AbilityBonus 
                    select statEntry;
         List<CardStatEntry> cardStatSorted = cardStatSortedEnumerable.ToList();
-        CardStatEntry cardAttribute1 = cardStatSorted.First();
-        CardStatEntry cardAttribute2 = cardStatSorted.Last();
+     
+        CardStatEntry cardAttribute1 = cardStatSorted.Last();
+        CardStatEntry cardAttribute2 = cardStatSorted.First();
         //Debug.Log($"{cardAttribute1.AbilityBonus}" + " " + $" {cardAttribute1.AbilityName}" + $" {cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}" + " Test output for cardStatList ordering entries.");
 
         switch (cardAttribute1.AbilityBonus)
@@ -62,7 +74,7 @@ public class CardStats : MonoBehaviour
                     break;
 
                 case 0:
-                    attribute1Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
+                    attribute1Text.text = ("");
                     break;
 
                 case < 0:
@@ -76,11 +88,12 @@ public class CardStats : MonoBehaviour
                     attribute2Text.text = ($"+{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
                     break;
 
-                case < 0:
-                    attribute2Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
+                case 0:
+                    attribute2Text.text = ("");
                     break;
 
-                default:
+                case < 0:
+                    attribute2Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
                     break;
             }
         

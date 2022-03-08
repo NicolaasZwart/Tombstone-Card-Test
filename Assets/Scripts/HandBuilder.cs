@@ -44,14 +44,14 @@ public class HandBuilder : MonoBehaviour
     private IEnumerable<Item> allCards = Enumerable.Empty<Item>();
 
 
-  /*  void Awake() 
+    void Awake() 
     {
 
-        IEnumerable<Item> allCards =
+        /*IEnumerable<Item> allCards =
                 from card in DialogueManager.masterDatabase.items
                 where card.FieldExists("isCard") == true
-                select card;
-    }*/
+                select card;*/
+    }
 
     void Start()
     {
@@ -90,6 +90,11 @@ public class HandBuilder : MonoBehaviour
     public void BuildTheWholeDeck()
     {
         cardCountSeparator = 0f;
+
+        IEnumerable<Item> allCards =
+            from card in DialogueManager.masterDatabase.items
+            where card.FieldExists("isCard") == true
+            select card;
 
         // This counts how many total cards are in the deck.
         cardCount = allCards.Count();
