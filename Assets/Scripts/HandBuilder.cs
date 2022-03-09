@@ -13,7 +13,6 @@ public class HandBuilder : MonoBehaviour
     [Header("Game Objects")]
     [SerializeField] GameObject cardGeneric;
     [SerializeField] GameObject playerHandArea;
-    [SerializeField] GameObject playerHandContainer;
     [SerializeField] TMP_Dropdown handSizeDropdown;
     [SerializeField] TMP_Dropdown numberOfClassCardsDropdown;
     [SerializeField] TMP_Dropdown numberOfBGCardsDropdown;
@@ -46,20 +45,8 @@ public class HandBuilder : MonoBehaviour
     string cardType = "";
     string playerCardName = "";
 
-    private IEnumerable<Item> allCards = Enumerable.Empty<Item>();
-
     public delegate void DestroyCardsHandler();
     public static event DestroyCardsHandler DestroyOldCards;
-
-
-    void Awake() 
-    {
-
-        /*IEnumerable<Item> allCards =
-                from card in DialogueManager.masterDatabase.items
-                where card.FieldExists("isCard") == true
-                select card;*/
-    }
 
     void Start()
     {
@@ -80,14 +67,12 @@ public class HandBuilder : MonoBehaviour
     {
         cardCount = 0;
         ResetPlayerHandArea();
-        BuildAPlayerHandContainer();
         BuildTheWholeDeck();
     }
 
     public void RandomHandOnClick()
     {
         ResetPlayerHandArea();
-        BuildAPlayerHandContainer();
         BuildARandomHand();
     }
 
@@ -105,12 +90,6 @@ public class HandBuilder : MonoBehaviour
         {
             DestroyOldCards.Invoke();
         }
-    }
-
-    public void BuildAPlayerHandContainer()
-    {
-        playerHandContainer = Instantiate(playerHandContainer, new Vector3(0, 0, 0), Quaternion.identity);
-        playerHandContainer.transform.SetParent(playerHandArea.transform, true);
     }
      
     public void BuildTheWholeDeck()
@@ -152,9 +131,10 @@ public class HandBuilder : MonoBehaviour
         handSize = Convert.ToInt32((handSizeDropdown.options[handSizeDropdown.value].text));
         //Debug.Log("The current hand size is " + handSize + "!");
         classCardsDesired = Convert.ToInt32((numberOfClassCardsDropdown.options[numberOfClassCardsDropdown.value].text));
-        backgroundCardsDesired = Convert.ToInt32((numberOfBGCardsDropdown.options[numberOfClassCardsDropdown.value].text));
+        backgroundCardsDesired = Convert.ToInt32((numberOfBGCardsDropdown.options[numberOfBGCardsDropdown.value].text));
+        Debug.Log(backgroundCardsDesired + " background cards desired from dropdown");
 
-        if (handSize < classCardsDesired + backgroundCardsDesired - 1)
+        if (handSize < classCardsDesired + backgroundCardsDesired)
         {
             infoText.text = "Warning: " +
                 "The hand size is too small. " +
@@ -294,8 +274,8 @@ public class HandBuilder : MonoBehaviour
         // Creates clone of card, and does basic math to determine space between each card.
         GameObject playerCard = Instantiate
             (cardGeneric, new Vector3(playerHandLeftAlign + 
-            (140 * cardCountSeparator), playerHandVerticalAlign, 0), Quaternion.identity);
-        playerCard.transform.SetParent(playerHandContainer.transform, false);
+            (180 * cardCountSeparator), playerHandVerticalAlign, 0), Quaternion.identity);
+        playerCard.transform.SetParent(playerHandArea.transform, false);
         playerCard.name = playerCardName;
 
         // Tells the new clone card to update its values

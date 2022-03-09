@@ -117,6 +117,28 @@ public class CardStats : MonoBehaviour
 
         // Card type.
         cardTypeText.text = ($"{cardType}");
-        
+
+        // Card color.
+        switch (cardType)
+        {
+            case "Class":
+                GetComponent<Image>().color = new Color32(35, 81, 232, 255);
+                break;
+
+            case "Background":
+                GetComponent<Image>().color = new Color32(51, 51, 51, 255);
+                break;
+
+            case "Quest":
+                GetComponent<Image>().color = new Color32(156, 0, 0, 255);
+                break;
+
+            default:
+                GetComponent<Image>().color = new Color32(51, 51, 51, 255);
+                break;
+        }
+
+
+
     }
 }

@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardGeneric: {fileID: 3426857117491156716, guid: a0374c3f287487247aed8fbfeea8bab9, type: 3}
-  playerCardsArea: {fileID: 0}
+  playerHandArea: {fileID: 0}
   handSizeDropdown: {fileID: 0}
   numberOfClassCardsDropdown: {fileID: 0}
   numberOfBGCardsDropdown: {fileID: 0}
   infoText: {fileID: 0}
-  playerHandLeftAlign: 200
-  playerHandVerticalAlign: 150
+  playerHandLeftAlign: -750
+  playerHandVerticalAlign: 0
