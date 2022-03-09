@@ -9,14 +9,19 @@ using TMPro;
 using Random = UnityEngine.Random;
 
 public class HandBuilder : MonoBehaviour
-{   
+{
+    [Header("Game Objects")]
     [SerializeField] GameObject cardGeneric;
-    [SerializeField] GameObject playerCardsArea;
+    [SerializeField] GameObject playerHandArea;
+    [SerializeField] GameObject playerHandContainer;
     [SerializeField] TMP_Dropdown handSizeDropdown;
     [SerializeField] TMP_Dropdown numberOfClassCardsDropdown;
     [SerializeField] TMP_Dropdown numberOfBGCardsDropdown;
-
     [SerializeField] TMP_Text infoText;
+
+    [Header("Hand Alignments")]
+    [SerializeField] int playerHandLeftAlign = 200;
+    [SerializeField] int playerHandVerticalAlign = 150;
 
     // This connects with the CardStats script on each CardGeneric.
     CardStats playerCardStats; 
@@ -28,9 +33,9 @@ public class HandBuilder : MonoBehaviour
     float cardCountSeparator = 0f; 
     
     // Handbuilder variables
-    int handSize = 5; // Hand size. Modifiable from a dropdown.
-    int classCardsDesired = 1; // Number of class cards desired in a hand. Modifiable from a dropdown.
-    int backgroundCardsDesired = 2; // Number of background cards desired in a hand. Modifiable from a dropdown.
+    int handSize = 5;
+    int classCardsDesired = 1;
+    int backgroundCardsDesired = 2;
     int questCardsDesired = 2;
 
     // Card stat variables
@@ -42,6 +47,9 @@ public class HandBuilder : MonoBehaviour
     string playerCardName = "";
 
     private IEnumerable<Item> allCards = Enumerable.Empty<Item>();
+
+    public delegate void DestroyCardsHandler();
+    public static event DestroyCardsHandler DestroyOldCards;
 
 
     void Awake() 
@@ -71,11 +79,15 @@ public class HandBuilder : MonoBehaviour
     public void WholeDeckOnClick()
     {
         cardCount = 0;
+        ResetPlayerHandArea();
+        BuildAPlayerHandContainer();
         BuildTheWholeDeck();
     }
 
     public void RandomHandOnClick()
     {
+        ResetPlayerHandArea();
+        BuildAPlayerHandContainer();
         BuildARandomHand();
     }
 
@@ -87,6 +99,20 @@ public class HandBuilder : MonoBehaviour
     //                                                                      //
     //////////////////////////////////////////////////////////////////////////
 
+    public void ResetPlayerHandArea()
+    {
+        if (DestroyOldCards != null)
+        {
+            DestroyOldCards.Invoke();
+        }
+    }
+
+    public void BuildAPlayerHandContainer()
+    {
+        playerHandContainer = Instantiate(playerHandContainer, new Vector3(0, 0, 0), Quaternion.identity);
+        playerHandContainer.transform.SetParent(playerHandArea.transform, true);
+    }
+     
     public void BuildTheWholeDeck()
     {
         cardCountSeparator = 0f;
@@ -107,10 +133,6 @@ public class HandBuilder : MonoBehaviour
 
     private void BuildARandomHand()
     {
-
-        //int randomNumberTest = Random.Range(0, 100);
-        //Debug.Log(randomNumberTest + ": Random number test!");
-
         infoText.text = "";
         cardCountSeparator = 0f;
 
@@ -134,11 +156,15 @@ public class HandBuilder : MonoBehaviour
 
         if (handSize < classCardsDesired + backgroundCardsDesired - 1)
         {
-            infoText.text = "Warning: The hand size is too small. Decrease number of Background and/or Class Cards, or increase hand size.";
+            infoText.text = "Warning: " +
+                "The hand size is too small. " +
+                "Decrease number of Background " +
+                "and/or Class Cards, or increase hand size.";
         }
         else
         {
-            // Sorts all cards from the entire deck into temporary lists and counts how many cards of each type there are.
+            // Sorts all cards from the entire deck into temporary lists
+            // and counts how many cards of each type there are.
             List<Item> classCards = new();
             List<Item> backgroundCards = new();
             List<Item> questCards = new();
@@ -156,6 +182,9 @@ public class HandBuilder : MonoBehaviour
             psionicCards = sortedCards.FirstOrDefault(x => x.Key == "cardTypePsionic").ToList<Item>();
             //Debug.Log(psionicCards.Count() + " Psionic Cards");
 
+            
+            ////// Randomization section.
+            
             //// Class card randomizer.
             
             // Generates a list of numbers from 0 to the count of class cards desired for the hand.
@@ -165,22 +194,18 @@ public class HandBuilder : MonoBehaviour
                 randomClassCardPicks.Add(n);
             }
 
-            /*foreach (var x in randomBackgroundCardPicks)
-            {
-                Debug.Log(x.ToString() + " IS THE LIST OF BACKGROUND CARD INT PICKS");
-            }*/
-
             // Pulls *randomly* from the list of numbers, then finds the class card at that index and adds it to the randomHand list.
             // Then removes the just-chosen number from the list, and the process repeats a number of times equal to the number of
             // class cards desired.
             for (int n = 0; n < classCardsDesired; n++)
             {
                 int indexClass = Random.Range(0, randomClassCardPicks.Count - 1);
-                Debug.Log(indexClass + " is the randomly chosen index from randomClassCardPicks.");
                 int randomClassCardDraw = randomClassCardPicks[indexClass];
+                //Debug.Log(randomClassCardDraw + " is the randomly chosen index from randomClassCardPicks.");
                 randomHand.Add(classCards.ElementAt(randomClassCardDraw));
                 randomClassCardPicks.RemoveAt(indexClass);
             }
+
 
             //// Background card randomizer.
 
@@ -193,11 +218,12 @@ public class HandBuilder : MonoBehaviour
             for (int n = 0; n < backgroundCardsDesired; n++)
             {
                 int indexBackground = Random.Range(0, randomBackgroundCardPicks.Count - 1);
-                Debug.Log(indexBackground + " is the randomly chosen index from randomBackgroundCardPicks.");
                 int randomBackgroundCardDraw = randomBackgroundCardPicks[indexBackground];
+                //Debug.Log(randomBackgroundCardDraw + " is the randomly chosen index from randomBackgroundCardPicks.");
                 randomHand.Add(backgroundCards.ElementAt(randomBackgroundCardDraw));
                 randomBackgroundCardPicks.RemoveAt(indexBackground);
             }
+
 
             //// Quest card randomizer.
 
@@ -209,27 +235,28 @@ public class HandBuilder : MonoBehaviour
                 randomQuestCardPicks.Add(n);
             }
 
-            //Debug.Log(questCardsDesired + " Quest cards desired."); // this works, but somewhere in the code block immediately below, something does not.
+            //Debug.Log(questCardsDesired + " Quest cards desired.");
 
             for (int n = 0; n < questCardsDesired; n++)
             {
                 int indexQuest = Random.Range(0, randomQuestCardPicks.Count - 1);
-                Debug.Log(indexQuest + " is the randomly chosen index from randomQuestCardPicks.");
                 int randomQuestCardDraw = randomQuestCardPicks[indexQuest];
+                //Debug.Log(randomQuestCardDraw + " is the randomly chosen index from randomQuestCardPicks.");
                 randomHand.Add(questCards.ElementAt(randomQuestCardDraw));
                 randomQuestCardPicks.RemoveAt(indexQuest);
             }
 
-            //Debug.Log("Fire");
-
             //// Psionic card randomizer TBD!!!!
 
             // Final count of cards in randomHand.
-            //Debug.Log(randomHand.Count() + " is the total number of cards currently in randomHand!");
+            Debug.Log(randomHand.Count() + " is the total number of cards currently in randomHand!");
 
         }
 
-
+        foreach (Item card in randomHand)
+        {
+            CardData(card);
+        }
     }
     
     //////////////////////////////////////////////////////////////////////////
@@ -265,8 +292,10 @@ public class HandBuilder : MonoBehaviour
         cardStatList.Add(new CardStatEntry() { AbilityBonus = mindBonus, AbilityName = "Mind" });
 
         // Creates clone of card, and does basic math to determine space between each card.
-        GameObject playerCard = Instantiate (cardGeneric, new Vector3(-700 + (140 * cardCountSeparator), 0, 0), Quaternion.identity);
-        playerCard.transform.SetParent (playerCardsArea.transform, false);
+        GameObject playerCard = Instantiate
+            (cardGeneric, new Vector3(playerHandLeftAlign + 
+            (140 * cardCountSeparator), playerHandVerticalAlign, 0), Quaternion.identity);
+        playerCard.transform.SetParent(playerHandContainer.transform, false);
         playerCard.name = playerCardName;
 
         // Tells the new clone card to update its values

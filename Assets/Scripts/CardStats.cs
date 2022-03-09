@@ -15,6 +15,7 @@ public class CardStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI attribute1Text;
     [SerializeField] TextMeshProUGUI attribute2Text;
     [SerializeField] TextMeshProUGUI cardTypeText;
+    
     bool attributeSpecial = false;
     bool attributeAll = false;
 
@@ -46,26 +47,15 @@ public class CardStats : MonoBehaviour
         // Gives new game object clone card a name, and puts that name in the title text box.
         cardTitleText.text = playerCardName;
 
-        // Removes any entries in cardStatList with Ability Bonuses equal to zero.
-        //List<CardStatEntry> cardStatListFiltered = cardStatList.AsEnumerable().Where(r => r.AbilityBonus != 0);
-
-        /*for (int n = 0; n < 3; n++)
-        {
-            if (cardStatList.ElementAt(n).AbilityBonus == 0)
-            {
-                cardStatList.RemoveAt(n);
-            }
-        }*/
-
         // Applies bonus values to card.
         IEnumerable<CardStatEntry> cardStatSortedEnumerable = from statEntry in cardStatList
+                   //where statEntry.AbilityBonus != 0 // Removes any entries in cardStatList with Ability Bonuses equal to zero. (might not be using this.)
                    orderby statEntry.AbilityBonus 
                    select statEntry;
         List<CardStatEntry> cardStatSorted = cardStatSortedEnumerable.ToList();
      
         CardStatEntry cardAttribute1 = cardStatSorted.Last();
         CardStatEntry cardAttribute2 = cardStatSorted.First();
-        //Debug.Log($"{cardAttribute1.AbilityBonus}" + " " + $" {cardAttribute1.AbilityName}" + $" {cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}" + " Test output for cardStatList ordering entries.");
 
         switch (cardAttribute1.AbilityBonus)
             {
@@ -97,6 +87,12 @@ public class CardStats : MonoBehaviour
                     break;
             }
         
+        if (cardAttribute2.AbilityBonus < 0 && cardAttribute1.AbilityBonus == 0)
+        {
+            attribute1Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
+            attribute2Text.text = ("");
+        }
+
         // "All" attribute.
         if (attributeAll)
         {
