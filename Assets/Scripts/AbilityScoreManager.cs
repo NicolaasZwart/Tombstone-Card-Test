@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 using CardStatsNamespace;
 
 public class AbilityScoreManager : MonoBehaviour
@@ -24,9 +25,30 @@ public class AbilityScoreManager : MonoBehaviour
 
     void PopulatePlayerScores(List<CardStatEntry> cardStatList, bool isPlayer)
     {
+        
         if (isPlayer)
         {
-            agilityValue.text = 
+            foreach (var CardStatEntry in cardStatList)
+            {
+                switch (CardStatEntry.AbilityName)
+                {
+                    case "Agility":
+                        agilityValue = CardStatEntry.AbilityBonus + 10)ToString());
+
+
+                           // }" + $" {cardAttribute1.AbilityName}");
+                        break;
+
+                    case 0:
+                        attribute1Text.text = ("");
+                        break;
+
+                    case < 0:
+                        attribute1Text.text = ($"{cardAttribute1.AbilityBonus}" + $" {cardAttribute1.AbilityName}");
+                        break;
+                }
+            }
+            
         }
     }
 
