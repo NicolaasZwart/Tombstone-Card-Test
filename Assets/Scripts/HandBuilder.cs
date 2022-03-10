@@ -18,15 +18,18 @@ public class HandBuilder : MonoBehaviour
     [SerializeField] TMP_Dropdown numberOfBGCardsDropdown;
     [SerializeField] TMP_Text infoText;
 
-    [Header("Hand Alignments")]
-    [SerializeField] int playerHandLeftAlign = 200;
-    [SerializeField] int playerHandVerticalAlign = 150;
+    [Header("Player Hand Alignments")]
+    [SerializeField] int playerHandLeftAlign = -750;
+    [SerializeField] int playerHandVerticalAlign = 0;
 
     // This connects with the CardStats script on each CardGeneric.
-    CardStats playerCardStats; 
+    CardStats abilityCardStats;
 
     // This gives us the count of the whole deck when needed for debugging purposes.
     int cardCount;
+
+    // This helps us know whose cards are whose.
+    bool isPlayer = true;
     
     // This is the float which ticks up and helps set the distance between each card.
     float cardCountSeparator = 0f; 
@@ -43,16 +46,15 @@ public class HandBuilder : MonoBehaviour
     int charismaBonus = 0;
     int mindBonus = 0;
     string cardType = "";
-    string playerCardName = "";
+    string abilityCardName = "";
 
     public delegate void DestroyCardsHandler();
     public static event DestroyCardsHandler DestroyOldCards;
 
     void Start()
     {
-        playerCardStats = cardGeneric.GetComponent<CardStats>();
+        abilityCardStats = cardGeneric.GetComponent<CardStats>();
         Random.InitState(DateTime.Now.Millisecond);
-        //handSizeDropdown = GetComponent<TMP_Dropdown>();
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -66,14 +68,14 @@ public class HandBuilder : MonoBehaviour
     public void WholeDeckOnClick()
     {
         cardCount = 0;
-        ResetPlayerHandArea();
+        ResetCards();
         BuildTheWholeDeck();
     }
 
     public void RandomHandOnClick()
     {
-        ResetPlayerHandArea();
-        BuildARandomHand();
+        ResetCards();
+        PlayerBuildARandomHand();
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -84,7 +86,7 @@ public class HandBuilder : MonoBehaviour
     //                                                                      //
     //////////////////////////////////////////////////////////////////////////
 
-    public void ResetPlayerHandArea()
+    public void ResetCards()
     {
         if (DestroyOldCards != null)
         {
@@ -106,12 +108,13 @@ public class HandBuilder : MonoBehaviour
         
         foreach (Item card in allCards)
         {
-            CardData(card);
+            CardData(card, isPlayer);
         }
     }
 
-    private void BuildARandomHand()
+    private void PlayerBuildARandomHand()
     {
+        isPlayer = true;
         infoText.text = "";
         cardCountSeparator = 0f;
 
@@ -235,19 +238,19 @@ public class HandBuilder : MonoBehaviour
 
         foreach (Item card in randomHand)
         {
-            CardData(card);
+            CardData(card, isPlayer);
         }
     }
     
     //////////////////////////////////////////////////////////////////////////
     //                                                                      //
     //                                                                      //
-    // CardData                                                             //
+    // Fetching card data from DB and creating card clones                  //
     //                                                                      //
     //                                                                      //
     //////////////////////////////////////////////////////////////////////////
 
-    public void CardData(Item card)
+    public void CardData(Item card, bool isPlayer)
     {
         cardCountSeparator++;
 
@@ -262,7 +265,7 @@ public class HandBuilder : MonoBehaviour
         cardType = cardType.Remove(0, 8);
 
         // Gets name of card
-        playerCardName = ($"{card.Name}");
+        abilityCardName = ($"{card.Name}");
         
         // Stores the card stats in a list.
         List<CardStatEntry> cardStatList = new List<CardStatEntry>();
@@ -272,14 +275,23 @@ public class HandBuilder : MonoBehaviour
         cardStatList.Add(new CardStatEntry() { AbilityBonus = mindBonus, AbilityName = "Mind" });
 
         // Creates clone of card, and does basic math to determine space between each card.
-        GameObject playerCard = Instantiate
+        // WILL NEED TO UPDATE THIS FOR NPCCARDS
+        // probably the way to do it is to have a playerCardGenerate method fire on button press
+        // which sets isPlayer bool to true, (and below we have an if statement that places
+        // cards depending on if that bool is true or not)
+        // then have an NPCCardGenerate method fire right after, which at the top of the method sets isPlayer
+        // bool to false.
+        GameObject abilityCard = Instantiate
             (cardGeneric, new Vector3(playerHandLeftAlign + 
             (180 * cardCountSeparator), playerHandVerticalAlign, 0), Quaternion.identity);
-        playerCard.transform.SetParent(playerHandArea.transform, false);
-        playerCard.name = playerCardName;
+        abilityCard.transform.SetParent(playerHandArea.transform, false);
+        abilityCard.name = abilityCardName;
 
         // Tells the new clone card to update its values
-        CardStats playerCardStats = playerCard.GetComponent<CardStats>();
-        playerCardStats.populateCardText(playerCardName, cardStatList, cardType);
+        CardStats abilityCardStats = abilityCard.GetComponent<CardStats>();
+        abilityCardStats.PopulateCardText(abilityCardName, cardStatList, cardType);
+
+        // Feeds the cardStatList info to the abilityCheck script, as well as the isPlayer bool.
+        AbilityCheckManager.ScoreUI(cardStatList, isPlayer);
     }
 }

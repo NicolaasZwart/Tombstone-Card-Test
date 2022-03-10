@@ -19,7 +19,7 @@ public class CardStats : MonoBehaviour
     bool attributeSpecial = false;
     bool attributeAll = false;
 
-    public void populateCardText(string playerCardName, List<CardStatEntry> cardStatList, string cardType)
+    public void PopulateCardText(string playerCardName, List<CardStatEntry> cardStatList, string cardType)
     {
         // sets up the "special" and "all" attribute bools
         if (cardType == "Psionic")
