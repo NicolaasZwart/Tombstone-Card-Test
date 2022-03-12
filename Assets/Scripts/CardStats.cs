@@ -49,7 +49,8 @@ public class CardStats : MonoBehaviour
 
         // Applies bonus values to card.
         IEnumerable<CardStatEntry> cardStatSortedEnumerable = from statEntry in cardStatList
-                   //where statEntry.AbilityBonus != 0 // Removes any entries in cardStatList with Ability Bonuses equal to zero. (might not be using this.)
+                   // Removes any entries in cardStatList with Ability Bonuses equal to zero. (might not be using this.)
+                   where statEntry.AbilityBonus != 0
                    orderby statEntry.AbilityBonus 
                    select statEntry;
         List<CardStatEntry> cardStatSorted = cardStatSortedEnumerable.ToList();
@@ -72,7 +73,16 @@ public class CardStats : MonoBehaviour
                     break;
             }
 
-        switch (cardAttribute2.AbilityBonus)
+        // The cardStatSorted.Last() code around line 58 above duplicates
+        // the attribute entry if there is only one on the card,
+        // and this was the best workaround I could devise:
+        if (cardAttribute1.AbilityName == cardAttribute2.AbilityName)
+        {
+            attribute2Text.text = ("");
+        }
+        else
+        {
+            switch (cardAttribute2.AbilityBonus)
             {
                 case > 0:
                     attribute2Text.text = ($"+{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
@@ -86,11 +96,6 @@ public class CardStats : MonoBehaviour
                     attribute2Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
                     break;
             }
-        
-        if (cardAttribute2.AbilityBonus < 0 && cardAttribute1.AbilityBonus == 0)
-        {
-            attribute1Text.text = ($"{cardAttribute2.AbilityBonus}" + $" {cardAttribute2.AbilityName}");
-            attribute2Text.text = ("");
         }
 
         // "All" attribute.
@@ -137,8 +142,5 @@ public class CardStats : MonoBehaviour
                 GetComponent<Image>().color = new Color32(51, 51, 51, 255);
                 break;
         }
-
-
-
     }
 }

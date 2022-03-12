@@ -51,6 +51,12 @@ public class HandBuilder : MonoBehaviour
     public delegate void DestroyCardsHandler();
     public static event DestroyCardsHandler DestroyOldCards;
 
+    public delegate void ResetPScoreHandler();
+    public static event ResetPScoreHandler ResetPScores;
+
+    public delegate void PlayerAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
+    public static event PlayerAbilityCheck p_AbilityCheck;
+
     void Start()
     {
         abilityCardStats = cardGeneric.GetComponent<CardStats>();
@@ -135,7 +141,7 @@ public class HandBuilder : MonoBehaviour
         //Debug.Log("The current hand size is " + handSize + "!");
         classCardsDesired = Convert.ToInt32((numberOfClassCardsDropdown.options[numberOfClassCardsDropdown.value].text));
         backgroundCardsDesired = Convert.ToInt32((numberOfBGCardsDropdown.options[numberOfBGCardsDropdown.value].text));
-        Debug.Log(backgroundCardsDesired + " background cards desired from dropdown");
+        //Debug.Log(backgroundCardsDesired + " background cards desired from dropdown");
 
         if (handSize < classCardsDesired + backgroundCardsDesired)
         {
@@ -232,8 +238,13 @@ public class HandBuilder : MonoBehaviour
             //// Psionic card randomizer TBD!!!!
 
             // Final count of cards in randomHand.
-            Debug.Log(randomHand.Count() + " is the total number of cards currently in randomHand!");
+            //Debug.Log(randomHand.Count() + " is the total number of cards currently in randomHand!");
 
+        }
+
+        if (ResetPScores != null)
+        {
+            ResetPScores.Invoke();
         }
 
         foreach (Item card in randomHand)
@@ -291,7 +302,7 @@ public class HandBuilder : MonoBehaviour
         CardStats abilityCardStats = abilityCard.GetComponent<CardStats>();
         abilityCardStats.PopulateCardText(abilityCardName, cardStatList, cardType);
 
-        // Feeds the cardStatList info to the abilityCheck script, as well as the isPlayer bool.
-        AbilityCheckManager.ScoreUI(cardStatList, isPlayer);
+        // Feeds the cardStatList info to the AbilityCheckManager, along with the isPlayer bool.
+        p_AbilityCheck.Invoke(cardStatList, isPlayer);
     }
 }
