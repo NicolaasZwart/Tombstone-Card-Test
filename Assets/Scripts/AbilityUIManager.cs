@@ -13,9 +13,16 @@ public class AbilityUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI p_chaValDisp;
     [SerializeField] TextMeshProUGUI p_miValDisp;
 
+    [Header("NPC Ability Score Value Fields")]
+    [SerializeField] TextMeshProUGUI npc_agValDisp;
+    [SerializeField] TextMeshProUGUI npc_endValDisp;
+    [SerializeField] TextMeshProUGUI npc_chaValDisp;
+    [SerializeField] TextMeshProUGUI npc_miValDisp;
+
     void OnEnable()
     {
         AbilityCheckManager.PopulatedPScores += PopulatePlayerScores;
+        AbilityCheckManager.PopulatedNPCScores += PopulateNPCScores;
     }
 
     void PopulatePlayerScores(int p_agVal, int p_endVal, int p_chaVal, int p_miVal, bool isPlayer)
@@ -33,8 +40,25 @@ public class AbilityUIManager : MonoBehaviour
         }
     }
 
+    void PopulateNPCScores(int npc_agVal, int npc_endVal, int npc_chaVal, int npc_miVal, bool isPlayer)
+    {
+        if (!isPlayer)
+        {
+            Debug.Log(npc_agVal + " this is npc agility value");
+            npc_agValDisp.text = npc_agVal.ToString(); ///// THERE IS AN ERROR HERE THAT I CAN'T FIGURE OUT.
+            npc_endValDisp.text = npc_endVal.ToString();
+            npc_chaValDisp.text = npc_chaVal.ToString();
+            npc_miValDisp.text = npc_miVal.ToString();
+        }
+        else
+        {
+            Debug.Log("The bool isPlayer == false did not reach the PopulateNPCScores method.");
+        }
+    }
+
     void OnDisable()
     {
         AbilityCheckManager.PopulatedPScores -= PopulatePlayerScores;
+        AbilityCheckManager.PopulatedNPCScores -= PopulateNPCScores;
     }
 }

@@ -123,7 +123,6 @@ public class HandBuilder : MonoBehaviour
             where card.FieldExists("isCard") == true
             select card;
 
-        // This counts how many total cards are in the deck.
         cardCount = allCards.Count();
         
         foreach (Item card in allCards)

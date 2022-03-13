@@ -13,13 +13,22 @@ public class AbilityCheckManager : MonoBehaviour
     int p_chaVal = 10;
     int p_miVal = 10;
 
+    int npc_agVal = 10;
+    int npc_endVal = 10;
+    int npc_chaVal = 10;
+    int npc_miVal = 10;
+
     // Ability score populating event declarations.
     public delegate void PScoresUIManager(int p_agVal, int p_endVal, int p_chaVal, int p_miVal, bool isPlayer);
     public static event PScoresUIManager PopulatedPScores;
 
+    public delegate void NPCScoresUIManager(int npc_agVal, int npc_endVal, int npc_chaVal, int npc_miVal, bool isPlayer);
+    public static event NPCScoresUIManager PopulatedNPCScores;
+
     void OnEnable()
     {
         HandBuilder.ResetPScores += ResetPlayerScores;
+        HandBuilder.ResetNpcScores += ResetNPCScores;
         HandBuilder.p_AbilityCheck += p_ScoresMath;
         HandBuilder.npc_AbilityCheck += npc_ScoresMath;
     }
@@ -30,6 +39,14 @@ public class AbilityCheckManager : MonoBehaviour
         this.p_endVal = 10;
         this.p_chaVal = 10;
         this.p_miVal = 10;
+    }
+
+    public void ResetNPCScores()
+    {
+        this.npc_agVal = 10;
+        this.npc_endVal = 10;
+        this.npc_chaVal = 10;
+        this.npc_miVal = 10;
     }
 
     public void p_ScoresMath(List<CardStatEntry> cardStatList, bool isPlayer)
@@ -57,7 +74,7 @@ public class AbilityCheckManager : MonoBehaviour
                         break;
 
                     default:
-                        Debug.Log("The PopulatePlayerScores switch defaulted.");
+                        Debug.Log("The p_ScoresMath switch defaulted.");
                         break;
                 }
             }
@@ -81,20 +98,64 @@ public class AbilityCheckManager : MonoBehaviour
         cardStatList.Add(new CardStatEntry() { AbilityBonus = p_endVal, AbilityName = "Endurance" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = p_chaVal, AbilityName = "Charisma" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = p_miVal, AbilityName = "Mind" });
-
-        // We need something here to compare the player's scores
-        // with the NPC.
     }
 
     public void npc_ScoresMath(List<CardStatEntry> cardStatList, bool isPlayer)
     {
-        ////// NPC scores math to go here!
+        if (!isPlayer)
+        {
+            foreach (var CardStatEntry in cardStatList)
+            {
+                switch (CardStatEntry.AbilityName)
+                {
+                    case "Agility":
+                        npc_agVal += CardStatEntry.AbilityBonus;
+                        break;
+
+                    case "Endurance":
+                        npc_endVal += CardStatEntry.AbilityBonus;
+                        break;
+
+                    case "Charisma":
+                        npc_chaVal += CardStatEntry.AbilityBonus;
+                        break;
+
+                    case "Mind":
+                        npc_miVal += CardStatEntry.AbilityBonus;
+                        break;
+
+                    default:
+                        Debug.Log("The npc_ScoresMath switch defaulted.");
+                        break;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("The bool isPlayer == false did not reach the npc_ScoresMath method.");
+        }
+
+        // This is an event which shares the NPC ability checks with AbilityUIManager.
+        if (!isPlayer)
+        {
+            if (PopulatedNPCScores != null)
+            {
+                PopulatedNPCScores.Invoke(npc_agVal, npc_endVal, npc_chaVal, npc_miVal, isPlayer);
+            }
+        }
+
+        List<CardStatEntry> npc_scoresFinal = new List<CardStatEntry>();
+        cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_agVal, AbilityName = "Agility" });
+        cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_endVal, AbilityName = "Endurance" });
+        cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_chaVal, AbilityName = "Charisma" });
+        cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_miVal, AbilityName = "Mind" });
     }
 
     void OnDisable()
     {
         HandBuilder.ResetPScores -= ResetPlayerScores;
+        HandBuilder.ResetNpcScores -= ResetNPCScores;
         HandBuilder.p_AbilityCheck -= p_ScoresMath;
-        HandBuilder.npc_AbilityCheck += npc_ScoresMath;
+        HandBuilder.npc_AbilityCheck -= npc_ScoresMath;
     }
 }
