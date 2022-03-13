@@ -20,7 +20,8 @@ public class AbilityCheckManager : MonoBehaviour
     void OnEnable()
     {
         HandBuilder.ResetPScores += ResetPlayerScores;
-        HandBuilder.p_AbilityCheck += p_ScoresMath;  
+        HandBuilder.p_AbilityCheck += p_ScoresMath;
+        HandBuilder.npc_AbilityCheck += npc_ScoresMath;
     }
 
     public void ResetPlayerScores()
@@ -85,9 +86,15 @@ public class AbilityCheckManager : MonoBehaviour
         // with the NPC.
     }
 
+    public void npc_ScoresMath(List<CardStatEntry> cardStatList, bool isPlayer)
+    {
+        ////// NPC scores math to go here!
+    }
+
     void OnDisable()
     {
         HandBuilder.ResetPScores -= ResetPlayerScores;
         HandBuilder.p_AbilityCheck -= p_ScoresMath;
+        HandBuilder.npc_AbilityCheck += npc_ScoresMath;
     }
 }
