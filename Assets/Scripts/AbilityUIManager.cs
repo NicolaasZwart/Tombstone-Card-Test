@@ -44,7 +44,6 @@ public class AbilityUIManager : MonoBehaviour
     {
         if (!isPlayer)
         {
-            Debug.Log(npc_agVal + " this is npc agility value");
             npc_agValDisp.text = npc_agVal.ToString(); ///// THERE IS AN ERROR HERE THAT I CAN'T FIGURE OUT.
             npc_endValDisp.text = npc_endVal.ToString();
             npc_chaValDisp.text = npc_chaVal.ToString();

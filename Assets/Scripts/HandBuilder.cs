@@ -28,6 +28,8 @@ public class HandBuilder : MonoBehaviour
     [SerializeField] int npcHandLeftAlign = -750;
     [SerializeField] int npcHandVerticalAlign = 0;
 
+    int n = 0; // int for debugging
+
     // This connects with the CardStats script on each CardGeneric.
     CardStats abilityCardStats;
 
@@ -387,7 +389,7 @@ public class HandBuilder : MonoBehaviour
             CardStats abilityCardStats = abilityCard.GetComponent<CardStats>();
             abilityCardStats.PopulateCardText(abilityCardName, cardStatList, cardType);
         }
-
+        
         // Feeds the cardStatList info to the AbilityCheckManager, along with the isPlayer bool.
         if (isPlayer == true)
         {
@@ -397,6 +399,6 @@ public class HandBuilder : MonoBehaviour
         {
             npc_AbilityCheck.Invoke(cardStatList, isPlayer);
         }
-
+        
     }
 }

@@ -7,6 +7,7 @@ using CardStatsNamespace;
 public class AbilityCheckManager : MonoBehaviour
 {
     [SerializeField] GameObject playerScoreArea;
+    [SerializeField] TMP_Dropdown checkType;
 
     int p_agVal = 10;
     int p_endVal = 10;
@@ -149,6 +150,28 @@ public class AbilityCheckManager : MonoBehaviour
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_endVal, AbilityName = "Endurance" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_chaVal, AbilityName = "Charisma" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_miVal, AbilityName = "Mind" });
+    }
+
+    void abilityCheck()
+    {
+        switch (checkType.options[checkType.value].text)
+        {
+            case "Agility Check":
+                break;
+
+            case "Endurance Check":
+                break;
+
+            case "Charisma Check":
+                break;
+
+            case "Mind Check":
+                break;
+            
+            default:
+                Debug.Log("The abilityCheck switch defaulted.");
+                break;
+        }
     }
 
     void OnDisable()
