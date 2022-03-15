@@ -19,10 +19,14 @@ public class AbilityUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI npc_chaValDisp;
     [SerializeField] TextMeshProUGUI npc_miValDisp;
 
+    [Header("Check Outcome Text Field")]
+    [SerializeField] TextMeshProUGUI checkOutcomeDisp;
+
     void OnEnable()
     {
         AbilityCheckManager.PopulatedPScores += PopulatePlayerScores;
         AbilityCheckManager.PopulatedNPCScores += PopulateNPCScores;
+        AbilityCheckManager.DeterminedCheckOutcome += DisplayCheckOutcome;
     }
 
     void PopulatePlayerScores(int p_agVal, int p_endVal, int p_chaVal, int p_miVal, bool isPlayer)
@@ -44,7 +48,7 @@ public class AbilityUIManager : MonoBehaviour
     {
         if (!isPlayer)
         {
-            npc_agValDisp.text = npc_agVal.ToString(); ///// THERE IS AN ERROR HERE THAT I CAN'T FIGURE OUT.
+            npc_agValDisp.text = npc_agVal.ToString();
             npc_endValDisp.text = npc_endVal.ToString();
             npc_chaValDisp.text = npc_chaVal.ToString();
             npc_miValDisp.text = npc_miVal.ToString();
@@ -55,9 +59,24 @@ public class AbilityUIManager : MonoBehaviour
         }
     }
 
+    void DisplayCheckOutcome(bool playerWon)
+    {
+        if (playerWon == true)
+        {
+            checkOutcomeDisp.text = "Success";
+            checkOutcomeDisp.color = new Color32(8, 189, 71, 255);
+        }
+        else if (playerWon == false)
+        {
+            checkOutcomeDisp.text = "Failure";
+            checkOutcomeDisp.color = new Color32(189, 41, 8, 255);
+        }
+    }
+
     void OnDisable()
     {
         AbilityCheckManager.PopulatedPScores -= PopulatePlayerScores;
         AbilityCheckManager.PopulatedNPCScores -= PopulateNPCScores;
+        AbilityCheckManager.DeterminedCheckOutcome -= DisplayCheckOutcome;
     }
 }

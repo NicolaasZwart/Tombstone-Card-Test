@@ -19,6 +19,10 @@ public class AbilityCheckManager : MonoBehaviour
     int npc_chaVal = 10;
     int npc_miVal = 10;
 
+    bool playerWon = false;
+
+    public delegate void TriggerAbilityCheck();
+
     // Ability score populating event declarations.
     public delegate void PScoresUIManager(int p_agVal, int p_endVal, int p_chaVal, int p_miVal, bool isPlayer);
     public static event PScoresUIManager PopulatedPScores;
@@ -26,12 +30,20 @@ public class AbilityCheckManager : MonoBehaviour
     public delegate void NPCScoresUIManager(int npc_agVal, int npc_endVal, int npc_chaVal, int npc_miVal, bool isPlayer);
     public static event NPCScoresUIManager PopulatedNPCScores;
 
+    public delegate void CheckOutcome(bool playerWon);
+    public static event CheckOutcome DeterminedCheckOutcome;
+
+
+HandBuilder handBuilder;
+
+
     void OnEnable()
     {
         HandBuilder.ResetPScores += ResetPlayerScores;
         HandBuilder.ResetNpcScores += ResetNPCScores;
         HandBuilder.p_AbilityCheck += p_ScoresMath;
         HandBuilder.npc_AbilityCheck += npc_ScoresMath;
+        HandBuilder.TriggeredAbilityCheck += abilityCheck;
     }
 
     public void ResetPlayerScores()
@@ -145,7 +157,7 @@ public class AbilityCheckManager : MonoBehaviour
             }
         }
 
-        List<CardStatEntry> npc_scoresFinal = new List<CardStatEntry>();
+        List<CardStatEntry> npc_scoresFinal = new List<CardStatEntry>(); // WE MIGHT BE ABLE TO LOSE THESE LISTS
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_agVal, AbilityName = "Agility" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_endVal, AbilityName = "Endurance" });
         cardStatList.Add(new CardStatEntry() { AbilityBonus = npc_chaVal, AbilityName = "Charisma" });
@@ -157,21 +169,55 @@ public class AbilityCheckManager : MonoBehaviour
         switch (checkType.options[checkType.value].text)
         {
             case "Agility Check":
+                if (npc_agVal < p_agVal)
+                {
+                    playerWon = true;
+                }
+                else
+                {
+                    playerWon = false;
+                }
                 break;
 
             case "Endurance Check":
+                if (npc_endVal < p_endVal)
+                {
+                    playerWon = true;
+                }
+                else
+                {
+                    playerWon = false;
+                }
                 break;
 
             case "Charisma Check":
+                if (npc_chaVal < p_chaVal)
+                {
+                    playerWon = true;
+                }
+                else
+                {
+                    playerWon = false;
+                }
                 break;
 
             case "Mind Check":
+                if (npc_miVal < p_miVal)
+                {
+                    playerWon = true;
+                }
+                else
+                {
+                    playerWon = false;
+                }
                 break;
             
             default:
                 Debug.Log("The abilityCheck switch defaulted.");
                 break;
         }
+        
+        DeterminedCheckOutcome.Invoke(playerWon);
     }
 
     void OnDisable()
@@ -180,5 +226,6 @@ public class AbilityCheckManager : MonoBehaviour
         HandBuilder.ResetNpcScores -= ResetNPCScores;
         HandBuilder.p_AbilityCheck -= p_ScoresMath;
         HandBuilder.npc_AbilityCheck -= npc_ScoresMath;
+        HandBuilder.TriggeredAbilityCheck -= abilityCheck;
     }
 }
