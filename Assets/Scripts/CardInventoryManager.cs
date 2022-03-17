@@ -13,13 +13,13 @@ public class CardInventoryManager : MonoBehaviour
 
     public void PopulateOnClick()
     {
-        Debug.Log("Fire");   
+        Debug.Log("Fire");
         CardInventoryTest();
     }
 
     void CardInventoryTest()
     {
-        LuaTableWrapper bellboyCards = DialogueLua.GetActorField("Bellboy", "NPC Hand").asTable;
+        LuaTableWrapper bellboyCards = DialogueLua.GetActorField("Bellboy", "npc_hand").asTable;
 
         foreach (var card in bellboyCards.values)
         {

@@ -22,9 +22,6 @@ public class HandManager : MonoBehaviour
     [SerializeField] int npcHandLeftAlign = -750;
     [SerializeField] int npcHandVerticalAlign = 0;
 
-    // This connects with the CardStats script on each CardGeneric.
-    CardStats abilityCardStats;
-
     // This helps us know whose cards are whose.
     bool isPlayer = true;
 
@@ -59,7 +56,8 @@ public class HandManager : MonoBehaviour
 
     void Start()
     {
-        abilityCardStats = cardGeneric.GetComponent<CardStats>();
+        CardStats abilityCardStats = cardGeneric.GetComponent<CardStats>();
+        PixelCrushers.DialogueSystem.Articy.ArticyTools.InitializeLuaSubtables();
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -100,26 +98,24 @@ public class HandManager : MonoBehaviour
         isPlayer = true;
         cardCountSeparator = 0f;
 
-        //
-        //
-        //
-        // the player hand card data intake should go here.
-        //
-        //
-        //
-        //
+        LuaTableWrapper p_cards = DialogueLua.GetActorField("Ovidio_Cabeaga", "p_hand").asTable;
 
-        List<Item> p_Hand= new(); // This is the list that will comprise the player's hand.
+        foreach (LuaTableWrapper card in p_cards.values)
+        {
+            CardData(card, isPlayer);
+        }
 
         if (ResetPScores != null)
         {
             ResetPScores.Invoke();
         }
 
+        /*List<Item> p_Hand = new(); // This is the list that will comprise the player's hand.
+
         foreach (Item card in p_Hand)
         {
             CardData(card, isPlayer);
-        }
+        }*/
     }
 
     // Building the NPC hand.
@@ -131,13 +127,14 @@ public class HandManager : MonoBehaviour
         //
         //
         //
-        // the NPC hand card data intake should go here.
+        // VERY IMPORTANT:
+        // "Bellboy" is just a test.
+        // This should be replaced by
+        // whichever NPC is the Conversant
         //
         //
         //
-        //
-
-        List<Item> npc_Hand = new(); // This is the list that will comprise the NPC's hand.
+        LuaTableWrapper bellboyCards = DialogueLua.GetActorField("Bellboy", "npc_hand").asTable;
 
 
         if (ResetNpcScores != null)
@@ -145,10 +142,12 @@ public class HandManager : MonoBehaviour
             ResetNpcScores.Invoke();
         }
 
+        /*List<Item> npc_Hand = new(); // This is the list that will comprise the NPC's hand.
+
         foreach (Item card in npc_Hand)
         {
             CardData(card, isPlayer);
-        }
+        }*/
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -159,7 +158,7 @@ public class HandManager : MonoBehaviour
     //                                                                      //
     //////////////////////////////////////////////////////////////////////////
 
-    public void CardData(Item card, bool isPlayer)
+    public void CardData(LuaTableWrapper card, bool isPlayer)
     {
         cardCountSeparator++;
 
