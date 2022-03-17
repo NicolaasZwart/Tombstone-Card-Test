@@ -224,8 +224,8 @@ HandBuilder handBuilder;
     {
         HandBuilder.ResetPScores -= ResetPlayerScores;
         HandBuilder.ResetNpcScores -= ResetNPCScores;
-        HandBuilder.p_AbilityCheck -= p_ScoresMath;
-        HandBuilder.npc_AbilityCheck -= npc_ScoresMath;
+        HandBuilder.p_AbilityMath -= p_CheckedMath;
+        HandBuilder.npc_AbilityMath -= npc_CheckedMath;
         HandBuilder.TriggeredAbilityCheck -= abilityCheck;
     }
 }

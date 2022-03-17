@@ -11,13 +11,19 @@ public class CardInventoryManager : MonoBehaviour
         PixelCrushers.DialogueSystem.Articy.ArticyTools.InitializeLuaSubtables();
     }
 
-    void CardInventoryTest()
+    public void PopulateOnClick()
     {
-        //var cardInventoryTable = DialogueLua.GetItemField("cardName", "agilityBonus", "enduranceBonus", "charismaBonus", "mindBonus", "cardType").AsTable;
+        Debug.Log("Fire");   
+        CardInventoryTest();
     }
 
-    void Update()
+    void CardInventoryTest()
     {
-        
+        LuaTableWrapper bellboyCards = DialogueLua.GetActorField("Bellboy", "NPC Hand").asTable;
+
+        foreach (var card in bellboyCards.values)
+        {
+            Debug.Log((card as LuaTableWrapper)["Name"]);
+        }
     }
 }
