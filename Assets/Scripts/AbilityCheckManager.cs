@@ -41,8 +41,8 @@ HandBuilder handBuilder;
     {
         HandBuilder.ResetPScores += ResetPlayerScores;
         HandBuilder.ResetNpcScores += ResetNPCScores;
-        HandBuilder.p_AbilityCheck += p_ScoresMath;
-        HandBuilder.npc_AbilityCheck += npc_ScoresMath;
+        HandBuilder.p_AbilityMath += p_CheckedMath;
+        HandBuilder.npc_AbilityMath += npc_CheckedMath;
         HandBuilder.TriggeredAbilityCheck += abilityCheck;
     }
 
@@ -62,7 +62,7 @@ HandBuilder handBuilder;
         this.npc_miVal = 10;
     }
 
-    public void p_ScoresMath(List<CardStatEntry> cardStatList, bool isPlayer)
+    public void p_CheckedMath(List<CardStatEntry> cardStatList, bool isPlayer)
     {
         if (isPlayer)
         {
@@ -113,7 +113,7 @@ HandBuilder handBuilder;
         cardStatList.Add(new CardStatEntry() { AbilityBonus = p_miVal, AbilityName = "Mind" });
     }
 
-    public void npc_ScoresMath(List<CardStatEntry> cardStatList, bool isPlayer)
+    public void npc_CheckedMath(List<CardStatEntry> cardStatList, bool isPlayer)
     {
         if (!isPlayer)
         {

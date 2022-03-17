@@ -65,10 +65,10 @@ public class HandBuilder : MonoBehaviour
     public static event ResetNPCScoreHandler ResetNpcScores;
 
     public delegate void PlayerAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
-    public static event PlayerAbilityCheck p_AbilityCheck;
+    public static event PlayerAbilityCheck p_AbilityMath;
 
     public delegate void npcAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
-    public static event npcAbilityCheck npc_AbilityCheck;
+    public static event npcAbilityCheck npc_AbilityMath;
 
     public delegate void TriggerAbilityCheck();
     public static event TriggerAbilityCheck TriggeredAbilityCheck;
@@ -395,11 +395,11 @@ public class HandBuilder : MonoBehaviour
         // Feeds the cardStatList info to the AbilityCheckManager, along with the isPlayer bool.
         if (isPlayer == true)
         {
-            p_AbilityCheck.Invoke(cardStatList, isPlayer);
+            p_AbilityMath.Invoke(cardStatList, isPlayer);
         }
         else if (isPlayer == false)
         {
-            npc_AbilityCheck.Invoke(cardStatList, isPlayer);
+            npc_AbilityMath.Invoke(cardStatList, isPlayer);
         }
         
     }
