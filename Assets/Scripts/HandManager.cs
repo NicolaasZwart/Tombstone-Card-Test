@@ -98,9 +98,9 @@ public class HandManager : MonoBehaviour
         isPlayer = true;
         cardCountSeparator = 0f;
 
-        LuaTableWrapper p_cards = DialogueLua.GetActorField("Ovidio_Cabeaga", "p_hand").asTable;
+        LuaTableWrapper pCards = DialogueLua.GetActorField("Ovidio_Cabeaga", "p_hand").asTable;
 
-        foreach (LuaTableWrapper card in p_cards.values)
+        foreach (LuaTableWrapper card in pCards.values)
         {
             CardData(card, isPlayer);
         }
@@ -134,7 +134,8 @@ public class HandManager : MonoBehaviour
         //
         //
         //
-        LuaTableWrapper bellboyCards = DialogueLua.GetActorField("Bellboy", "npc_hand").asTable;
+        string npcName = DialogueActor.GetActorName(DialogueManager.currentConversant);
+        LuaTableWrapper npcCards = DialogueLua.GetActorField(npcName, "npc_hand").asTable;
 
 
         if (ResetNpcScores != null)
