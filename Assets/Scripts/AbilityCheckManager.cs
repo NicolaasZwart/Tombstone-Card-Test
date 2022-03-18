@@ -33,17 +33,13 @@ public class AbilityCheckManager : MonoBehaviour
     public delegate void CheckOutcome(bool playerWon);
     public static event CheckOutcome DeterminedCheckOutcome;
 
-
-HandBuilder handBuilder;
-
-
     void OnEnable()
     {
-        HandBuilder.ResetPScores += ResetPlayerScores;
-        HandBuilder.ResetNpcScores += ResetNPCScores;
-        HandBuilder.p_AbilityMath += p_CheckedMath;
-        HandBuilder.npc_AbilityMath += npc_CheckedMath;
-        HandBuilder.TriggeredAbilityCheck += abilityCheck;
+        HandManager.ResetPScores += ResetPlayerScores;
+        HandManager.ResetNpcScores += ResetNPCScores;
+        HandManager.p_AbilityMath += p_CheckedMath;
+        HandManager.npc_AbilityMath += npc_CheckedMath;
+        HandManager.TriggeredAbilityCheck += abilityCheck;
     }
 
     public void ResetPlayerScores()
@@ -222,10 +218,10 @@ HandBuilder handBuilder;
 
     void OnDisable()
     {
-        HandBuilder.ResetPScores -= ResetPlayerScores;
-        HandBuilder.ResetNpcScores -= ResetNPCScores;
-        HandBuilder.p_AbilityMath -= p_CheckedMath;
-        HandBuilder.npc_AbilityMath -= npc_CheckedMath;
-        HandBuilder.TriggeredAbilityCheck -= abilityCheck;
+        HandManager.ResetPScores -= ResetPlayerScores;
+        HandManager.ResetNpcScores -= ResetNPCScores;
+        HandManager.p_AbilityMath -= p_CheckedMath;
+        HandManager.npc_AbilityMath -= npc_CheckedMath;
+        HandManager.TriggeredAbilityCheck -= abilityCheck;
     }
 }

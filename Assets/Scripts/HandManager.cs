@@ -22,11 +22,9 @@ public class HandManager : MonoBehaviour
     [SerializeField] int npcHandLeftAlign = -750;
     [SerializeField] int npcHandVerticalAlign = 0;
 
-    // This helps us know whose cards are whose.
-    bool isPlayer = true;
-
-    // This is the float which ticks up and helps set the distance between each card.
-    float cardCountSeparator = 0f;
+    bool drew = false; // This helps us lock off functions unless the player has drawn cards.
+    bool isPlayer = true; // This helps us know whose cards are whose.
+    float cardCountSeparator = 0f; // This is the float which ticks up and helps set the distance between each card.
 
     // Card stat variables
     int agilityBonus = 0;
@@ -70,10 +68,22 @@ public class HandManager : MonoBehaviour
 
     public void Draw()
     {
+        drew = false;
         ResetCards();
         PBuildHand();
         NPCBuildHand();
-        TriggeredAbilityCheck.Invoke();
+        drew = true;
+    }
+
+    public void Check()
+    {
+        if (drew)
+        {
+            if (TriggeredAbilityCheck != null)
+            {
+                TriggeredAbilityCheck.Invoke();
+            }
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -100,22 +110,15 @@ public class HandManager : MonoBehaviour
 
         LuaTableWrapper pCards = DialogueLua.GetActorField("Ovidio_Cabeaga", "p_hand").asTable;
 
-        foreach (LuaTableWrapper card in pCards.values)
-        {
-            CardData(card, isPlayer);
-        }
-
         if (ResetPScores != null)
         {
             ResetPScores.Invoke();
         }
 
-        /*List<Item> p_Hand = new(); // This is the list that will comprise the player's hand.
-
-        foreach (Item card in p_Hand)
+        foreach (LuaTableWrapper card in pCards.values)
         {
             CardData(card, isPlayer);
-        }*/
+        }
     }
 
     // Building the NPC hand.
@@ -130,25 +133,24 @@ public class HandManager : MonoBehaviour
         // VERY IMPORTANT:
         // "Bellboy" is just a test.
         // This should be replaced by
-        // whichever NPC is the Conversant
+        // whichever NPC is the Conversant, like so:
+        //
+        //        string npcName = DialogueActor.GetActorName(DialogueManager.currentConversant);
+        //        LuaTableWrapper npcCards = DialogueLua.GetActorField(npcName, "npc_hand").asTable;
         //
         //
-        //
-        string npcName = DialogueActor.GetActorName(DialogueManager.currentConversant);
-        LuaTableWrapper npcCards = DialogueLua.GetActorField(npcName, "npc_hand").asTable;
-
+        LuaTableWrapper npcCards = DialogueLua.GetActorField("Bellboy", "npc_hand").asTable;
 
         if (ResetNpcScores != null)
         {
             ResetNpcScores.Invoke();
         }
 
-        /*List<Item> npc_Hand = new(); // This is the list that will comprise the NPC's hand.
-
-        foreach (Item card in npc_Hand)
+        foreach (LuaTableWrapper card in npcCards.values)
         {
             CardData(card, isPlayer);
-        }*/
+        }
+
     }
 
     //////////////////////////////////////////////////////////////////////////
@@ -164,17 +166,22 @@ public class HandManager : MonoBehaviour
         cardCountSeparator++;
 
         // Gets values of a card's bonuses from the Articy DB created by Dialogue System
-        agilityBonus = card.LookupInt("agilityBonus");
-        enduranceBonus = card.LookupInt("enduranceBonus");
-        charismaBonus = card.LookupInt("charismaBonus");
-        mindBonus = card.LookupInt("mindBonus");
+        float agBonusFloat = (float)card["agilityBonus"]; // specified cast is not valid
+        float endBonusFloat = (float)card["enduranceBonus"];
+        float chaBonusFloat = (float)card["charismaBonus"];
+        float miBonusFloat = (float)card["mindBonus"];
+
+        agilityBonus = (int)agBonusFloat;
+        enduranceBonus = (int)endBonusFloat;
+        charismaBonus = (int)chaBonusFloat;
+        mindBonus = (int)miBonusFloat;
 
         // Gets card type and removes first 8 characters from technical name
-        cardType = card.LookupValue("cardType");
+        cardType = (string)card["cardType"];
         cardType = cardType.Remove(0, 8);
 
         // Gets name of card
-        abilityCardName = ($"{card.Name}");
+        abilityCardName = ((string)card["Name"]); // OLD VERSION   abilityCardName = ($"{card.Name}");
 
         // Stores the card stats in a list.
         List<CardStatEntry> cardStatList = new List<CardStatEntry>();
@@ -212,11 +219,17 @@ public class HandManager : MonoBehaviour
         // Feeds the cardStatList info to the AbilityCheckManager, along with the isPlayer bool.
         if (isPlayer == true)
         {
-            p_AbilityMath.Invoke(cardStatList, isPlayer);
+            if (p_AbilityMath != null)
+            {
+                p_AbilityMath.Invoke(cardStatList, isPlayer);
+            }
         }
         else if (isPlayer == false)
         {
-            npc_AbilityMath.Invoke(cardStatList, isPlayer);
+            if (npc_AbilityMath != null)
+            {
+                npc_AbilityMath.Invoke(cardStatList, isPlayer);
+            }
         }
 
     }

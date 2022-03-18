@@ -47,7 +47,7 @@ MonoBehaviour:
   cardGeneric: {fileID: 3426857117491156716, guid: a0374c3f287487247aed8fbfeea8bab9, type: 3}
   playerHandArea: {fileID: 0}
   npcHandArea: {fileID: 0}
-  playerHandLeftAlign: -750
+  playerHandLeftAlign: -550
   playerHandVerticalAlign: 0
-  npcHandLeftAlign: -750
+  npcHandLeftAlign: -550
   npcHandVerticalAlign: 0

@@ -64,18 +64,22 @@ public class HandBuilder : MonoBehaviour
     public delegate void ResetNPCScoreHandler();
     public static event ResetNPCScoreHandler ResetNpcScores;
 
-    public delegate void PlayerAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
+    /*public delegate void PlayerAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
     public static event PlayerAbilityCheck p_AbilityMath;
 
     public delegate void npcAbilityCheck(List<CardStatEntry> cardStatList, bool isPlayer);
-    public static event npcAbilityCheck npc_AbilityMath;
+    public static event npcAbilityCheck npc_AbilityMath;*/
 
     public delegate void TriggerAbilityCheck();
     public static event TriggerAbilityCheck TriggeredAbilityCheck;
 
-    void Start()
+    void Awake()
     {
         abilityCardStats = cardGeneric.GetComponent<CardStats>();
+    }
+
+    void Start()
+    {
         Random.InitState(DateTime.Now.Millisecond);
     }
 
@@ -391,16 +395,22 @@ public class HandBuilder : MonoBehaviour
             CardStats abilityCardStats = abilityCard.GetComponent<CardStats>();
             abilityCardStats.PopulateCardText(abilityCardName, cardStatList, cardType);
         }
-        
+
         // Feeds the cardStatList info to the AbilityCheckManager, along with the isPlayer bool.
-        if (isPlayer == true)
+        /*if (isPlayer == true)
         {
-            p_AbilityMath.Invoke(cardStatList, isPlayer);
+            if (p_AbilityMath != null)
+            {
+                Debug.Log("Fire");
+                p_AbilityMath.Invoke(cardStatList, isPlayer);
+            }
         }
         else if (isPlayer == false)
         {
-            npc_AbilityMath.Invoke(cardStatList, isPlayer);
-        }
-        
+            if (npc_AbilityMath != null)
+            {
+                npc_AbilityMath.Invoke(cardStatList, isPlayer);
+            }
+        }*/
     }
 }
