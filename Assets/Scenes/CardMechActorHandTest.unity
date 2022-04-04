@@ -566,6 +566,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7302111665975566231, guid: cb264cf69afe19741b8d0e20b7728449, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302111665975566231, guid: cb264cf69afe19741b8d0e20b7728449, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302111665975566231, guid: cb264cf69afe19741b8d0e20b7728449, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302111665975566231, guid: cb264cf69afe19741b8d0e20b7728449, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7302111665975566232, guid: cb264cf69afe19741b8d0e20b7728449, type: 3}
       propertyPath: m_Name
       value: CardAreaCanvas
